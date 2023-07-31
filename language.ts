@@ -1318,3 +1318,13 @@ export const languages = {
 	 */
 	zulu: new Language('zu', 'Zulu')
 };
+
+export function findLanguage(id: string) {
+	for (let code in languages) {
+		const language = languages[code] as Language;
+
+		if (language.id == id) {
+			return language;
+		}
+	}
+}
