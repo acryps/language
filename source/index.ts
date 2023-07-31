@@ -1315,13 +1315,14 @@ declare global {
 }
 
 for (let language in languages) {
-	if (!''[language]) {
+	if (!('' as any)[language]) {
 		Object.defineProperty(String.prototype, language, {
 			get() {
 				const source = this;
+				const translatedLanguage = (languages as any)[language] as Language;
 
 				return (translation: string) => {
-					if (Language.active == languages[language]) {
+					if (Language.active == translatedLanguage) {
 						return translation;
 					}
 

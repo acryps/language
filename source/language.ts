@@ -1321,7 +1321,7 @@ export const languages = {
 
 export function findLanguage(id: string) {
 	for (let code in languages) {
-		const language = languages[code] as Language;
+		const language = (languages as any)[code] as Language;
 
 		if (language.id == id) {
 			return language;
