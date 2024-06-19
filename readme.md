@@ -1,5 +1,5 @@
 # acryps language
-Translations made easy.
+Translations made easy, languages based on ISO 639.
 
 ```
 'Hello World'
@@ -23,3 +23,8 @@ console.log(
 ```
 
 Can be used in the browser and server-side!
+
+Another handy property found on all languages is the natural writing direction:
+```
+document.documentElement.dir = Language.active.direction;
+```
